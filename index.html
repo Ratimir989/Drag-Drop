@@ -1,48 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Drag & Drop</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <title>KANBAN</title>
+
+    <link href="styles.css" rel="stylesheet" />
+    <script src="dragdropswap.js"></script>
+
 </head>
+
 <body>
-    <div class="board-layout">
-        <div class="left">
-            <div class="board-text">Today Board</div>
+    <header>
+        <h1>Kanban Board</h1>
+    </header>
+    <div class="kanban">
+        <div class="kanbanList" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="kanbanItemContaine">
+                <h4>TO DO</h4>
+            </div>
+            <div class="kanbanItemContaine" draggable="true" ondragstart="drag(event)">
+                <div class="kanbanItem">
+                    <h5>Read: learn.javascript.ru</h5>
+                </div>
+            </div>
+            <div class="kanbanItemContaine" draggable="true" ondragstart="drag(event)">
+                <div class="kanbanItem">
+                    <h5>Task: Kanban Board</h5>
+                </div>
+            </div>
+            <div class="kanbanItemContaine" draggable="true" ondragstart="drag(event)">
+                <div class="kanbanItem">
+                    <h5>Sport: Charging</h5>
+                </div>
+            </div>
         </div>
-        <div id="boardlist" class="board-lists">
-            <div id='list1' class="board-list" ondrop="dropIt(event)" ondragover="allowDrop(event)">
-                <div class="list-title"> TO DD</div>
-                <div  id='card1' class="card" draggable="true" ondragstart="dragStart(event)">
-                    Work on article
-                </div>
-                <div  id='card2' class="card" draggable="true" ondragstart="dragStart(event)">
-                    Back up database
-                </div>
-                <div id='card3' class="card" draggable="true" ondragstart="dragStart(event)">
-                    Build Lambda function
-                </div>
-                <div id='card4' class="card" draggable="true" ondragstart="dragStart(event)">
-                    Work on course content
-                </div>
-                <div id='card5' class="card" draggable="true" ondragstart="dragStart(event)">
-                    Debug SQL code
-                </div>
+        <div class="kanbanList" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="kanbanListHeade">
+                <h4>In Progress</h4>
             </div>
-            <div  id='list2' class="board-list" ondrop="dropIt(event)" ondragover="allowDrop(event)">
-                <div  class="list-title">
-                In Progress
-                </div>
-            </div>
-            <div  id='list3' class="board-list"  ondrop="dropIt(event)" ondragover="allowDrop(event)">
-                <div  class="list-title">
-                  Done
-                </div>
+        </div>
+        <div class="kanbanList" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="kanbanListHeade">
+                <h4>Finished</h4>
             </div>
         </div>
     </div>
-    <script src="dragdropswap.js"></script>
 </body>
 </html>
